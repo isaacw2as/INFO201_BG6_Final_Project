@@ -1,0 +1,52 @@
+"State","prevalence","X95..Confidence.Interval","Quartile","outcome","age_group","year_pair","estimate","ci_lower","ci_upper","estimate_confidence_interval","ci_median"
+"Alaska",34.9,"32.4 - 37.4","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.031592226,0.0221931855,0.0447895207,"2.219  -  4.479",3.349
+"Alabama",41.2,"39.4 - 43.1","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0374187456,0.0269779884,0.0516855473,"2.698  -  5.169",3.933
+"Arkansas",38,"35.9 - 40.0","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0392159123,0.0278132697,0.0550287058,"2.781  -  5.503",4.142
+"Arizona",35.3,"33.9 - 36.8","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0286658355,0.0203753854,0.0401911547,"2.038  -  4.019",3.028
+"California",33,"31.1 - 34.9","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0318356305,0.0253844889,0.0398591967,"2.538  -  3.986",3.262
+"Colorado",29.3,"28.2 - 30.4","29.3 - 32.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0291664886,0.0214299573,0.0395830453,"2.143  -  3.958",3.051
+"Connecticut",34.6,"32.9 - 36.3","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0273709263,0.0190055467,0.0392709671,"1.901  -  3.927",2.914
+"District of Columbia",32.8,"30.7 - 35.0","29.3 - 32.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0322252642,0.0224266471,0.0461031737,"2.243  -  4.61",3.426
+"Delaware",35.9,"33.7 - 38.2","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0320795797,0.022816741,0.0449299234,"2.282  -  4.493",3.387
+"Florida",36.1,"34.0 - 38.2","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0251505234,0.0192449661,0.032807654,"1.924  -  3.281",2.603
+"Georgia",38.2,"36.5 - 39.9","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0321744544,0.024077277,0.0428750764,"2.408  -  4.288",3.348
+"Hawaii",41.9,"40.3 - 43.5","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0296365666,0.0205435944,0.0425792914,"2.054  -  4.258",3.156
+"Iowa",33.8,"32.6 - 35.0","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0282284784,0.0197956277,0.0401066993,"1.98  -  4.011",2.995
+"Idaho",31.5,"29.8 - 33.3","29.3 - 32.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0252870885,0.0176910481,0.0360250429,"1.769  -  3.603",2.686
+"Illinois",33.5,"31.5 - 35.6","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0283508836,0.0211201391,0.0379611622,"2.112  -  3.796",2.954
+"Indiana",37.9,"36.6 - 39.3","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0315476721,0.0231441151,0.0428686304,"2.314  -  4.287",3.301
+"Kansas",34.5,"33.2 - 35.8","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0326784972,0.0243517463,0.0437248665,"2.435  -  4.372",3.404
+"Kentucky",40.5,"38.5 - 42.6","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0323792921,0.0235300146,0.0444053018,"2.353  -  4.441",3.397
+"Louisiana",38.4,"36.4 - 40.3","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0375288482,0.026896266,0.0521394703,"2.69  -  5.214",3.952
+"Massachusetts",33.9,"32.3 - 35.5","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0318296148,0.0224037909,0.0450384129,"2.24  -  4.504",3.372
+"Maryland",36.5,"35.3 - 37.7","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0356688431,0.0259342582,0.0488740274,"2.593  -  4.887",3.74
+"Maine",33.1,"31.5 - 34.8","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0263450092,0.0176617534,0.039127277,"1.766  -  3.913",2.839
+"Michigan",37.3,"35.7 - 38.9","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0268436919,0.0207780459,0.0346174576,"2.078  -  3.462",2.77
+"Minnesota",30.1,"29.2 - 31.1","29.3 - 32.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0282706567,0.0198340955,0.0401487729,"1.983  -  4.015",2.999
+"Missouri",36.2,"34.8 - 37.6","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0339812916,0.0240366231,0.0478386911,"2.404  -  4.784",3.594
+"Mississippi",37.5,"35.8 - 39.2","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0329618731,0.0234755751,0.0461005431,"2.348  -  4.61",3.479
+"Montana",31.6,"30.1 - 33.2","29.3 - 32.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0308117067,0.0210915065,0.0448065024,"2.109  -  4.481",3.295
+"North Carolina",34.2,"32.6 - 35.8","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0324942121,0.0239019675,0.044035839,"2.39  -  4.404",3.397
+"North Dakota",32.7,"30.7 - 34.7","29.3 - 32.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0326821499,0.0231743046,0.0459075034,"2.317  -  4.591",3.454
+"Nebraska",31.1,"29.9 - 32.3","29.3 - 32.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0238617436,0.0166983858,0.0339918447,"1.67  -  3.399",2.535
+"New Hampshire",33.1,"31.3 - 35.0","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.028581601,0.0194783697,0.0417580498,"1.948  -  4.176",3.062
+"New Jersey",34.8,"33.6 - 36.0","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0319372068,0.0232142254,0.0437909902,"2.321  -  4.379",3.35
+"New Mexico",32.7,"30.8 - 34.7","29.3 - 32.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0289804927,0.0204662044,0.0408890107,"2.047  -  4.089",3.068
+"Nevada",37.4,"34.7 - 40.3","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0379346257,0.0269528169,0.0531465343,"2.695  -  5.315",4.005
+"New York",34.6,"33.5 - 35.8","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.034879851,0.0269937342,0.0449634018,"2.699  -  4.496",3.598
+"Ohio",38.2,"37.0 - 39.5","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0357096946,0.0276964881,0.0459317774,"2.77  -  4.593",3.681
+"Oklahoma",35.7,"33.9 - 37.5","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0316216774,0.0230837689,0.0431778979,"2.308  -  4.318",3.313
+"Oregon",31.6,"30.1 - 33.1","29.3 - 32.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0300760075,0.0215308937,0.0418673679,"2.153  -  4.187",3.17
+"Pennsylvania",39.3,"37.5 - 41.2","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0310824681,0.0234498337,0.041094887,"2.345  -  4.109",3.227
+"Rhode Island",35.1,"33.0 - 37.2","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0317171358,0.0218554791,0.045820136,"2.186  -  4.582",3.384
+"South Carolina",36.9,"34.8 - 39.0","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.028979522,0.0204319523,0.0409534136,"2.043  -  4.095",3.069
+"South Dakota",31.4,"28.8 - 34.2","29.3 - 32.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0308560012,0.021708612,0.0436857181,"2.171  -  4.369",3.27
+"Tennessee",36.3,"34.3 - 38.3","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0400800777,0.028227029,0.056620436,"2.823  -  5.662",4.242
+"Texas",35.1,"33.4 - 36.9","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0286031182,0.0225825476,0.0361693931,"2.258  -  3.617",2.938
+"Utah",33.4,"32.3 - 34.5","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0300580191,0.0221565984,0.0406600538,"2.216  -  4.066",3.141
+"Virginia",36.6,"35.1 - 38.0","34.7 - 36.9","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0329084521,0.0244786725,0.0441099515,"2.448  -  4.411",3.429
+"Vermont",30.5,"28.6 - 32.4","29.3 - 32.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0317058858,0.0222432865,0.0450086994,"2.224  -  4.501",3.363
+"Washington",32.2,"31.1 - 33.3","29.3 - 32.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0284139176,0.0204669147,0.0393227515,"2.047  -  3.932",2.989
+"Wisconsin",33,"31.1 - 35.0","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0288509373,0.0205527227,0.0403615115,"2.055  -  4.036",3.046
+"West Virginia",42.8,"41.0 - 44.6","37.0 - 42.8","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0321385744,0.0222819451,0.0461495709,"2.228  -  4.615",3.422
+"Wyoming",34.3,"32.2 - 36.4","32.9 - 34.6","Pain Reliever Misuse in the Past Year","12 or Older","2021 (Preliminary)",0.0288314602,0.0205417807,0.0403287155,"2.054  -  4.033",3.044
