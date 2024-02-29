@@ -1,5 +1,5 @@
 
-df <- .csv("students_health_data.csv")
+df <- read.csv("students_health_data.csv")
 
 server <- function(input, output){
   
