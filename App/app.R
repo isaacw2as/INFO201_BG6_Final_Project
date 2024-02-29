@@ -1,4 +1,6 @@
 library(shiny)
+library(tidyverse)
+library(plotly)
 
 source("ui.R")
 source("server.R")

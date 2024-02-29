@@ -9,7 +9,7 @@ server <- function(input, output){
        filtered_df 
          
       viz_1_output <- ggplot(data = NULL) + geom_bar(mapping = aes(
-          x =   filtered_df[[]]      ) )
+          x =   filtered_df[[input$user_selection_viz_1_3]]      ) )
         
       return(viz_1_output)   
   })
