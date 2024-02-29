@@ -3,15 +3,15 @@ df <- read.csv("students_health_data.csv")
 
 server <- function(input, output){
   
-  output$viz_1_output <- renderPlotly({
+  output$viz_2_output <- renderPlotly({
       filtered_df <- df %>%  
-          filter(.data[[input$user_selection_viz_1_1]]  == input$user_selection_viz_1_2)
+          filter(.data[[input$user_selection_viz_2_1]]  == input$user_selection_viz_2_2)
        filtered_df 
          
-      viz_1_output <- ggplot(data = NULL) + geom_bar(mapping = aes(
-          x =   filtered_df[[input$user_selection_viz_1_3]]      ) )
+      viz_2_output <- ggplot(data = NULL) + geom_bar(mapping = aes(
+          x =   filtered_df[[input$user_selection_viz_2_3]]      ) )
         
-      return(viz_1_output)   
+      return(viz_2_output)   
   })
 
   output$viz_3_output <- renderPlotly({

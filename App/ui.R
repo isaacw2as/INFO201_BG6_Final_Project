@@ -7,19 +7,41 @@ overview_tab <- tabPanel("Overview Tab Title",
    p("some explanation")
 )
 
+
 ## VIZ 1 TAB INFO
 
 viz_1_sidebar <- sidebarPanel(
+  h2("Options for graph"),
+  #TODO: Put inputs for modifying graph here
+)
+
+viz_1_main_panel <- mainPanel(
+  h2("Vizualization 1 Title"),
+  # plotlyOutput(outputId = "your_viz_1_output_id")
+)
+
+viz_1_tab <- tabPanel("Viz 1 tab title",
+                      sidebarLayout(
+                        viz_1_sidebar,
+                        viz_1_main_panel
+                      )
+)
+
+
+
+## VIZ 2 TAB INFO
+
+viz_2_sidebar <- sidebarPanel(
   h2("Graph Options"),
   
   
-  selectInput(inputId = "user_selection_viz_1_1", 
+  selectInput(inputId = "user_selection_viz_2_1", 
               label = "Mental Health Factor", 
               choices = c("Stress_Level", "Depression_Score", "Anxiety_Score" ),
               selected = "Stress_Level", 
               multiple = FALSE),
   
-  sliderInput(inputId = "user_selection_viz_1_2", 
+  sliderInput(inputId = "user_selection_viz_2_2", 
               label = "Mental Health Rating",
               value = 3,
               min = 0,
@@ -28,43 +50,26 @@ viz_1_sidebar <- sidebarPanel(
               #animate = TRUE, # Try this out to see what it does
               step = 1),
   
-  selectInput(inputId = "user_selection_viz_1_3", 
-              label = "Physical Health Factor", 
-              choices = c("Potential_BMI", "Potential_Blood_Pressure", "Potential_Heart_Rate", "Potential_Sleep_Duration", "Potential_Sleep_Disorder"  ),
-              selected = "Potential_BMI", 
+  selectInput(inputId = "user_selection_viz_2_3", 
+              label = "Sleep Stats", 
+              choices = c( "Potential_Sleep_Duration", "Potential_Sleep_Disorder", "Sleep_Quality"),
+              selected = "Potential_Sleep_Duration", 
               multiple = FALSE),
 )
 
-viz_1_main_panel <- mainPanel(
-  h2("Mental Health and Physicals"),
-  plotlyOutput(outputId = "viz_1_output")
-)
-
-viz_1_tab <- tabPanel("Display 1: Mental Health and Physicals",
-  sidebarLayout(
-    viz_1_sidebar,
-    viz_1_main_panel
-  )
-)
-
-## VIZ 2 TAB INFO
-
-viz_2_sidebar <- sidebarPanel(
-  h2("Options for graph"),
-  #TODO: Put inputs for modifying graph here
-)
-
 viz_2_main_panel <- mainPanel(
-  h2("Vizualization 2 Title"),
-  # plotlyOutput(outputId = "your_viz_1_output_id")
+  h2("Mental Health and Sleep"),
+  plotlyOutput(outputId = "viz_2_output")
 )
 
-viz_2_tab <- tabPanel("Viz 2 tab title",
+viz_2_tab <- tabPanel("Display 1: Mental Health and Sleep",
   sidebarLayout(
     viz_2_sidebar,
     viz_2_main_panel
   )
 )
+
+
 
 ## VIZ 3 TAB INFO
 
