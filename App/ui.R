@@ -68,22 +68,60 @@ viz_2_tab <- tabPanel("Viz 2 tab title",
 
 ## VIZ 3 TAB INFO
 
+
 viz_3_sidebar <- sidebarPanel(
-  h2("Options for graph"),
-  #TODO: Put inputs for modifying graph here
+  h2("Graph Options"),
+  
+  # Slider input for selecting a mental health factor rating.
+  sliderInput(inputId = "user_selection_viz_3_1", 
+              label = "Mental Health Factor Rating",
+              value = 3, # Default value
+              min = 0, # Minimum value
+              max = 5, # Maximum value
+              ticks = FALSE,
+              step = 1), # Step size for the slider
+  
+  # Dropdown menu for selecting a social health factor.
+  selectInput(inputId = "user_selection_viz_3_2", 
+              label = "Social Health Factor", 
+              choices = c("Academic_Performance", "Social_Support", "Basic_Needs", "Extracurricular_Involvement"),
+              selected = "Academic_Performance", # Default selection
+              multiple = FALSE),
 )
 
+# Create the main panel for the third visualization where the new plot output will be displayed.
 viz_3_main_panel <- mainPanel(
-  h2("Vizualization 3 Title"),
-  # plotlyOutput(outputId = "your_viz_1_output_id")
+  h2("Mental and Social Health Visualization"),
+  plotlyOutput(outputId = "viz_3_output") # Placeholder for the new Plotly output
 )
 
-viz_3_tab <- tabPanel("Viz 3 tab title",
+# Combine the sidebar and main panel into a single tab panel for the third visualization.
+viz_3_tab <- tabPanel("Display 3: Mental and Social Health",
   sidebarLayout(
     viz_3_sidebar,
     viz_3_main_panel
   )
 )
+
+
+#/
+#viz_3_sidebar <- sidebarPanel(
+#  h2("Options for graph"),
+#  #TODO: Put inputs for modifying graph here
+#)
+
+#viz_3_main_panel <- mainPanel(
+#  h2("Vizualization 3 Title"),
+  # plotlyOutput(outputId = "your_viz_1_output_id")
+#)
+
+#viz_3_tab <- tabPanel("Viz 3 tab title",
+#  sidebarLayout(
+#    viz_3_sidebar,
+#    viz_3_main_panel
+#  )
+#)
+#/
 
 ## CONCLUSIONS TAB INFO
 
