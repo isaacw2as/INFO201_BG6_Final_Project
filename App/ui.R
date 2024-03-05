@@ -11,15 +11,37 @@ overview_tab <- tabPanel("Overview Tab Title",
 ## VIZ 1 TAB INFO
 
 viz_1_sidebar <- sidebarPanel(
-  h2("Options for graph"),
-  #TODO: Put inputs for modifying graph here
+  h2("Mental Health Versus Physical Health"),
+
+    selectInput(inputId = "mental_health_factor", 
+              label = "Select Mental Health Factor", 
+              choices = c("Stress", "Depression", "Anxiety"),
+              selected = "Stress", 
+              multiple = FALSE),
+  
+    sliderInput(inputId = "mental_health_rating", 
+              label = "Mental Health Rating",
+              min = 1, 
+              max = 5, 
+              value = 3, 
+              step = 1,
+              ticks = TRUE),
+  
+  selectInput(inputId = "physical_health_factor", 
+              label = "Select Physical Health Factor", 
+              choices = c("Potential_BMI", "Potential_Blood_Pressure", "Potential_Heart_Rate"),
+              selected = "Potential_BMI", 
+              multiple = FALSE)
 )
 
+
+# Define the main panel for the first visualization
 viz_1_main_panel <- mainPanel(
-  h2("Vizualization 1 Title"),
-  # plotlyOutput(outputId = "your_viz_1_output_id")
+  h2("Visualization 1 Title"),
+  plotlyOutput(outputId = "viz_1_output")
 )
 
+# Combine the sidebar and main panel into a single tab
 viz_1_tab <- tabPanel("Viz 1 tab title",
                       sidebarLayout(
                         viz_1_sidebar,
