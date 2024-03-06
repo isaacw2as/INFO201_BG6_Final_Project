@@ -203,14 +203,6 @@ conclusion_tab <- tabPanel("Conclusion",
    Through various visualizaion tabs one can experient with the severity and type of disorder, and observe the reciprocent affects on physical, mental, 
    and social aspects of our lives.")
 
-  fluidRow(
-    column(4, plotlyOutput("obesity_pie_chart")),
-    column(4, plotlyOutput("heart_rate_pie_chart")),
-    column(4, plotlyOutput("mental_health_pie_chart"))
-  
-)
-
-
 
 ui <- navbarPage("INFO 201 Final Project by Isaac Yun, Nicholas Wyatt, and Rowan Cooper",
   overview_tab,
