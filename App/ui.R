@@ -3,26 +3,26 @@ library(plotly)
 ## OVERVIEW TAB INFO
 
 overview_tab <- tabPanel("Sleep, Academics, and Health",
-   h1("Introduction"),
-   p("The goal of this project is to seek out relationships between sleep and other factors.
+                         h1("Introduction"),
+                         p("The goal of this project is to seek out relationships between sleep and other factors.
      Doing this will allow us to determine whether our not there are any connections between the variables
      at play. For example, is there a correlation between people who report having high depression and those
      same people getting a low amount of sleep? From our datasets, we were able to gather information about
      numerous different aspects of a person's life."),
-   p("Among the variables present in the dataset, key ones are
+                         p("Among the variables present in the dataset, key ones are
      sleep quality, sleep disorders, depression score, anxiety score, and BMI. We hope to present some insights
      about the connections that can be made between all the different variables in our dataset. In particular,
      we were interested about the connection between mental health disorders and sleep quality, as well as how
      mental health relates to physical and social health, all of which should be relatable to most students."),
-   img( src = 'sleepimg.jpg', width = 300, align = "left"), 
-   img( src = 'hat.webp', width = 300, align = "center"),
-   img( src = 'health.jpg', width = 300, align = "right"),
-   h2("Dataset Information"),
-   p("The individual datasets that we used to create our final joined dataset came from these sources:"),
-   a(),
-   a(),
-   h2("Data Limitations"),
-   p("Unfortunately, the data that we used comes with some limitations imposed on it, mainly from <><><>")
+                         img( src = 'sleepimg.jpg', width = 300, align = "left"), 
+                         img( src = 'hat.webp', width = 300, align = "center"),
+                         img( src = 'health.jpg', width = 300, align = "right"),
+                         h2("Dataset Information"),
+                         p("The individual datasets that we used to create our final joined dataset came from these sources:"),
+                         a(),
+                         a(),
+                         h2("Data Limitations"),
+                         p("Unfortunately, the data that we used comes with some limitations imposed on it, mainly from <><><>")
 )
 
 
@@ -30,14 +30,14 @@ overview_tab <- tabPanel("Sleep, Academics, and Health",
 
 viz_1_sidebar <- sidebarPanel(
   h2("Select Mental Health/Physical Health Factors"),
-
-    selectInput(inputId = "mental_health_factor", 
+  
+  selectInput(inputId = "mental_health_factor", 
               label = "Select Mental Health Factor", 
               choices = c("Stress", "Depression", "Anxiety", "Sleep"),
               selected = "Stress", 
               multiple = FALSE),
   
-    sliderInput(inputId = "mental_health_rating", 
+  sliderInput(inputId = "mental_health_rating", 
               label = "Mental Health Rating",
               min = 1, 
               max = 5, 
@@ -86,7 +86,7 @@ viz_2_sidebar <- sidebarPanel(
               min = 0,
               max = 5,
               ticks = FALSE,
-               animate = TRUE, # Try this out to see what it does
+              animate = TRUE, # Try this out to see what it does
               step = 1),
   
   selectInput(inputId = "user_selection_viz_2_3", 
@@ -104,10 +104,10 @@ viz_2_main_panel <- mainPanel(
 )
 
 viz_2_tab <- tabPanel("Mental Health vs. Sleep",
-  sidebarLayout(
-    viz_2_sidebar,
-    viz_2_main_panel
-  )
+                      sidebarLayout(
+                        viz_2_sidebar,
+                        viz_2_main_panel
+                      )
 )
 
 ## VIZ 3 TAB INFO
@@ -159,10 +159,10 @@ viz_3_main_panel <- mainPanel(
 
 # Combine the sidebar and main panel into a single tab panel for the third visualization.
 viz_3_tab <- tabPanel("Mental Health vs. Social Health Factors",
-  sidebarLayout(
-    viz_3_sidebar,
-    viz_3_main_panel
-  )
+                      sidebarLayout(
+                        viz_3_sidebar,
+                        viz_3_main_panel
+                      )
 )
 
 viz_4_sidebar <- sidebarPanel(
@@ -196,19 +196,21 @@ viz_4_tab <- tabPanel("Mental Health vs. Social Health Factors 2",
 
 ## CONCLUSIONS TAB INFO
 
-conclusion_tab <- tabPanel("Conclusion",
- h1("Conclusion on The Affects of Mental Health and Sleep"),
- p("Combining data from the SHAMSHA Substance abuse and mental health services administration and sleep data from the CDC, FitBit, and other sources,
+conclusion_tab <- tabPanel("Conclusion on The Affects of Mental Health and Sleep",
+                           h1("Some title"),
+                           p("ombining data from the SHAMSHA Substance abuse and mental health services administration and sleep data from the CDC, FitBit, and other sources,
    we have created an interactiive visualization of how mental health disorders such as anxiety, stress, and sleep quality and duration affect our lives. 
    Through various visualizaion tabs one can experient with the severity and type of disorder, and observe the reciprocent affects on physical, mental, 
-   and social aspects of our lives.")
+   and social aspects of our lives.")")
+)
+
 
 
 ui <- navbarPage("INFO 201 Final Project by Isaac Yun, Nicholas Wyatt, and Rowan Cooper",
-  overview_tab,
-  viz_1_tab,
-  viz_2_tab,
-  viz_3_tab,
-  viz_4_tab,
-  conclusion_tab
+                 overview_tab,
+                 viz_1_tab,
+                 viz_2_tab,
+                 viz_3_tab,
+                 viz_4_tab,
+                 conclusion_tab
 )
