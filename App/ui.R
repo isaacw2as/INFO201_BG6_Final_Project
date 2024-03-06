@@ -211,10 +211,18 @@ viz_4_tab <- tabPanel("Mental Health vs. Social Health Factors 2",
 
 conclusion_tab <- tabPanel("Conclusion",
                            h1("Conclusion of Mental Health on Physical, Mental, and Sleep Health:"),
-                           p("Combining data from the SHAMSHA Substance abuse and mental health services administration and sleep data from the CDC, FitBit, and other sources,
-   we have created an interactiive visualization of how mental health disorders such as anxiety, stress, and sleep quality and duration affect our lives. 
-   Through various visualizaion tabs one can experient with the severity and type of disorder, and observe the reciprocent affects on physical, mental, 
-   and social aspects of our lives.")
+                           p("We have combined datasets that link physical, mental, and sleep health to stress depression, and anxiety.
+Using the data, we have created an interactive visualization showcasing how mental health disorders like anxiety, stress, and sleep quality impact our daily lives.
+Our project encompasses three distinct visualizations focusing on physical health, mental health, and sleep health, each offering insights into how these
+factors are interrelated and affect one another.
+
+For example, one may witness in our first visualization how sleep quality affects physical health, and then move on to see how mental health affects sleep quality. 
+In this sense, a new insight can be made connecting mental and physical health. One can also view in our third visualization how depression, anxiety, sleep quality
+and stress all interplay into acieving various basic needs at differing levels of sucess. 
+
+By bringing these three visualizations together, we aim to educate and raise awareness among students, a group particularly vulnerable to the pressures
+of academic, social, and personal challenges. We hope that through showing how each of these disorders are connected with real data, we can bring awareness to the importance
+of seeking mental help as we help clarify the clear evidential damage these disorders can have on physical, social, and mental well being.")
 )
 
 
