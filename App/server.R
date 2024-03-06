@@ -6,43 +6,49 @@ library(readr)
 library(stringr)
 
 
-df <- read.csv("https://raw.githubusercontent.com/isaacw2as/INFO201_BG6_Final_Project/main/Data%20Wrangling/students_health_data.csv")
+df <- read.csv("https://raw.githubusercontent.com/isaacw2as/INFO201_BG6_Final_Project/main/Data%20Wrangling/student_health_data.csv")
 
 server <- function(input, output){
 
   output$viz_1_output <- renderPlotly({
-    # Correcting the mapping of mental health factors to their actual column names in the dataset
-    
-    
-    mental_health_factor_corrected <- switch(input$mental_health_factor,
+    # Correcting the mapping of mental/physical health factors to their actual column names
+    mental_health_factor<- switch(input$mental_health_factor,
                                              "Stress" = "Stress_Level",
                                              "Depression" = "Depression_Score",
-                                             "Anxiety" = "Anxiety_Score")
+                                             "Anxiety" = "Anxiety_Score",
+                                             "Sleep" = "Sleep_Quality")
     
-    # Assuming 'Potential_BMI' selection maps to 'Numerical_BMI' etc.
-    physical_health_factor <- switch(input$physical_health_factor,
-                                     "Potential_BMI" = "NUM.Potential_BMI",
-                                     "Potential_Blood_Pressure" = "NUM.Potential_BP",
-                                     "Potential_Heart_Rate" = "NUM.Potential_HR")
+    physical_health_factor <- if (input$mental_health_factor == "Sleep") {
+      switch(input$physical_health_factor,
+             "BMI" = "BMI.sleep",
+             "Blood Pressure" = "Blood_Pressure.sleep",
+             "Heart Rate" = "Heart_Rate.sleep")
+    } else {
+      switch(input$physical_health_factor,
+             "BMI" = "BMI.stress",
+             "Blood Pressure" = "Blood_Pressure.stress",
+             "Heart Rate" = "Heart_Rate.stress")
+    }
+    
     
     # Prepare the data for plotting
     plot_data <- df %>%
-      filter(mental_health_factor_corrected == input$mental_health_rating) %>%
+      filter(.data[[mental_health_factor]] == input$mental_health_rating) %>%
       group_by(.data[[physical_health_factor]]) %>%
       summarise(Count = n(), .groups = 'drop')
     
     # Generate the plot
-    viz_1_output <- ggplot(plot_data, aes(x = as.factor(physical_health_factor), y = Count, fill = as.factor(physical_health_factor))) +
-      geom_bar(stat = "identity") +
-      labs(title = paste("Distribution of", input$physical_health_factor, "for", input$mental_health_factor, "Level", input$mental_health_rating),
-           x = input$physical_health_factor,
-           y = "Count") +
-      theme_minimal()
+    viz_1_output <- ggplot(data = plot_data, aes_string(x = physical_health_factor, y = "Count")) +
+      geom_col() + 
+      labs(
+        title="Most Apparent Physical Health Factors",
+        x="Count",
+        y=input$physical_health_factor
+      )
     
     ggplotly(viz_1_output)
+    
   })
-  
-  
   
   output$viz_2_output <- renderPlotly({
     filtered_df <- df %>%  
@@ -69,13 +75,60 @@ server <- function(input, output){
   
   output$viz_3_output <- renderPlotly({
     filtered_df <- df %>%
-      filter(.data[[input$user_selection_viz_3_1]] == input$user_selection_viz_3_2)
+      filter(Stress_Level == input$stress_selection) %>%
+      filter(Sleep_Quality == input$sleep_selection) %>%
+      filter(Depression_Score == input$depression_selection) %>%
+      filter(Anxiety_Score == input$anxiety_selection)
     
-    viz_3_output <- ggplot(filtered_df, aes(x = .data[[input$user_selection_viz_3_2]])) +
-      geom_bar() +
-      labs(title = "Mental and Social Health Factors", x = "Social Health Factor", y = "Count")
+    filtered_df <- filtered_df %>%
+      summarize(academic = mean(Academic_Performance),
+                social = mean(Social_Support),
+                basic = mean(Basic_Needs),
+                extras = mean(Extracurricular_Involvement))
+    
+    filtered_df_long <- pivot_longer(filtered_df, cols = c(academic, social, basic, extras), names_to = "Variable", values_to = "Value")
+    
+    viz_3_output <- ggplot(filtered_df_long, aes(x = Variable, y = Value, fill = Variable)) +
+      geom_bar(stat = "identity") +
+      theme_minimal() +
+      labs(title = "Social Factor Scores Based on Mental Health Factors Selected",
+           x = "Social Factors",
+           y = "Average Score",
+           fill = "Social Factors") +
+      scale_x_discrete(labels = c(
+        "academic" = "Academic Performance",
+        "social" = "Social Support",
+        "basic" = "Basic Needs",
+        "extras" = "Extracurricular Involvement"
+      ))
     
     ggplotly(viz_3_output)
+  })
+  
+  output$viz_4_output <- renderPlotly({
+    
+    mental_health_factor <- switch(input$mental_selection,
+                                   "Stress" = "Stress_Level",
+                                   "Depression" = "Depression_Score",
+                                   "Anxiety" = "Anxiety_Score",
+                                   "Sleep" = "Sleep_Quality")
+    
+    social_health_factor <- switch(input$social_selection,
+                                   "Academic Performance" = "Academic_Performance",
+                                   "Basic Needs" = "Basic_Needs",
+                                   "Extracurricular Involvement" = "Extracurricular_Involvement",
+                                   "Social Support" = "Social_Support")
+    
+    filtered_df <- df %>%
+      group_by(.data[[mental_health_factor]]) %>%
+      summarize(mean = mean(.data[[social_health_factor]], na.rm = TRUE), .groups = 'drop')
+    
+    viz_4_output <- ggplot(data = filtered_df) +
+      geom_line(mapping = 
+                  aes(x = .data[[mental_health_factor]],
+                      y = mean))
+    
+    ggplotly(viz_4_output)
   })
   
 }

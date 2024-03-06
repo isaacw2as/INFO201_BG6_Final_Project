@@ -11,7 +11,7 @@ overview_tab <- tabPanel("Overview Tab Title",
 ## VIZ 1 TAB INFO
 
 viz_1_sidebar <- sidebarPanel(
-  h2("Mental Health Versus Physical Health"),
+  h2("Select Mental Health/Physical Health Factors"),
 
     selectInput(inputId = "mental_health_factor", 
               label = "Select Mental Health Factor", 
@@ -29,20 +29,20 @@ viz_1_sidebar <- sidebarPanel(
   
   selectInput(inputId = "physical_health_factor", 
               label = "Select Physical Health Factor", 
-              choices = c("Potential_BMI", "Potential_Blood_Pressure", "Potential_Heart_Rate"),
-              selected = "Potential_BMI", 
+              choices = c("BMI", "Blood Pressure", "Heart Rate"),
+              selected = "BMI", 
               multiple = FALSE)
 )
 
 
 # Define the main panel for the first visualization
 viz_1_main_panel <- mainPanel(
-  h2("Visualization 1 Title"),
+  h2("Finding the Most Common Physical Attributes for Mental Health Symptoms"),
   plotlyOutput(outputId = "viz_1_output")
 )
 
 # Combine the sidebar and main panel into a single tab
-viz_1_tab <- tabPanel("Viz 1 tab title",
+viz_1_tab <- tabPanel("Mental Health vs. Physical Health",
                       sidebarLayout(
                         viz_1_sidebar,
                         viz_1_main_panel
@@ -55,7 +55,6 @@ viz_1_tab <- tabPanel("Viz 1 tab title",
 
 viz_2_sidebar <- sidebarPanel(
   h2("Graph Options"),
-  
   
   selectInput(inputId = "user_selection_viz_2_1", 
               label = "Mental Health Factor", 
@@ -76,7 +75,7 @@ viz_2_sidebar <- sidebarPanel(
               label = "Sleep Stats", 
               choices = c( "Potential_Sleep_Duration", "Potential_Sleep_Disorder", "Sleep_Quality"),
               selected = "Potential_Sleep_Duration", 
-              multiple = FALSE),
+              multiple = FALSE)
 )
 
 viz_2_main_panel <- mainPanel(
@@ -84,71 +83,96 @@ viz_2_main_panel <- mainPanel(
   plotlyOutput(outputId = "viz_2_output")
 )
 
-viz_2_tab <- tabPanel("Display 1: Mental Health and Sleep",
+viz_2_tab <- tabPanel("Mental Health vs. Sleep",
   sidebarLayout(
     viz_2_sidebar,
     viz_2_main_panel
   )
 )
 
-
-
 ## VIZ 3 TAB INFO
 
 
 viz_3_sidebar <- sidebarPanel(
-  h2("Graph Options"),
+  h2("Select Mental Health/Social Health Factors"),
   
   # Slider input for selecting a mental health factor rating.
-  sliderInput(inputId = "user_selection_viz_3_1", 
-              label = "Mental Health Factor Rating",
+  
+  sliderInput(inputId = "anxiety_selection", 
+              label = "Anxiety Rating",
               value = 3, # Default value
               min = 0, # Minimum value
               max = 5, # Maximum value
-              ticks = FALSE,
+              ticks = TRUE,
               step = 1), # Step size for the slider
   
-  # Dropdown menu for selecting a social health factor.
-  selectInput(inputId = "user_selection_viz_3_2", 
-              label = "Social Health Factor", 
-              choices = c("Academic_Performance", "Social_Support", "Basic_Needs", "Extracurricular_Involvement"),
-              selected = "Academic_Performance", # Default selection
-              multiple = FALSE),
+  sliderInput(inputId = "depression_selection", 
+              label = "Depression Rating",
+              value = 3, # Default value
+              min = 0, # Minimum value
+              max = 5, # Maximum value
+              ticks = TRUE,
+              step = 1), # Step size for the slider
+  
+  sliderInput(inputId = "sleep_selection", 
+              label = "Sleep Quality Rating",
+              value = 3, # Default value
+              min = 0, # Minimum value
+              max = 5, # Maximum value
+              ticks = TRUE,
+              step = 1), # Step size for the slider  
+  
+  sliderInput(inputId = "stress_selection", 
+              label = "Stress Rating",
+              value = 3, # Default value
+              min = 0, # Minimum value
+              max = 5, # Maximum value
+              ticks = TRUE,
+              step = 1) # Step size for the slider
 )
 
 # Create the main panel for the third visualization where the new plot output will be displayed.
 viz_3_main_panel <- mainPanel(
-  h2("Mental and Social Health Visualization"),
+  h2("Finding Social Status for Students based on Mental Health Factors"),
   plotlyOutput(outputId = "viz_3_output") # Placeholder for the new Plotly output
 )
 
 # Combine the sidebar and main panel into a single tab panel for the third visualization.
-viz_3_tab <- tabPanel("Display 3: Mental and Social Health",
+viz_3_tab <- tabPanel("Mental Health vs. Social Health Factors",
   sidebarLayout(
     viz_3_sidebar,
     viz_3_main_panel
   )
 )
 
+viz_4_sidebar <- sidebarPanel(
+  h2("Select Mental Health/Social Health Factors"),
+  
+  selectInput(inputId = "mental_selection", 
+              label = "Mental Health Factor", 
+              choices = c("Stress", "Depression", "Anxiety", "Sleep" ),
+              selected = "Stress", 
+              multiple = FALSE),
+  
+  selectInput(inputId = "social_selection",
+              label = "Social Health Factor",
+              choices = c("Academic Performance", "Basic Needs", "Extracurricular Involvement", "Social Support"),
+              selected = "Academic Performance",
+              multiple = FALSE)
+)
 
-#/
-#viz_3_sidebar <- sidebarPanel(
-#  h2("Options for graph"),
-#  #TODO: Put inputs for modifying graph here
-#)
+viz_4_main_panel <- mainPanel(
+  h2("Trends for Social Status based on Mental Health Factors"),
+  plotlyOutput(outputId = "viz_4_output")
+)
 
-#viz_3_main_panel <- mainPanel(
-#  h2("Vizualization 3 Title"),
-  # plotlyOutput(outputId = "your_viz_1_output_id")
-#)
-
-#viz_3_tab <- tabPanel("Viz 3 tab title",
-#  sidebarLayout(
-#    viz_3_sidebar,
-#    viz_3_main_panel
-#  )
-#)
-#/
+# Combine the sidebar and main panel into a single tab panel for the third visualization.
+viz_4_tab <- tabPanel("Mental Health vs. Social Health Factors 2",
+                      sidebarLayout(
+                        viz_4_sidebar,
+                        viz_4_main_panel
+                      )
+)
 
 ## CONCLUSIONS TAB INFO
 
@@ -164,5 +188,6 @@ ui <- navbarPage("Example Project Title",
   viz_1_tab,
   viz_2_tab,
   viz_3_tab,
+  viz_4_tab,
   conclusion_tab
 )
