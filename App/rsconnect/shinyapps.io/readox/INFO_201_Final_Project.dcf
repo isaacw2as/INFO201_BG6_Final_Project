@@ -1,0 +1,12 @@
+name: INFO_201_Final_Project
+title: INFO_201_Final_Project
+username: readox
+account: readox
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11422598
+bundleId: 8341327
+url: https://readox.shinyapps.io/INFO_201_Final_Project/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
