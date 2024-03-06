@@ -9,20 +9,32 @@ overview_tab <- tabPanel("Sleep, Academics, and Health",
      at play. For example, is there a correlation between people who report having high depression and those
      same people getting a low amount of sleep? From our datasets, we were able to gather information about
      numerous different aspects of a person's life."),
+                         br(),
                          p("Among the variables present in the dataset, key ones are
      sleep quality, sleep disorders, depression score, anxiety score, and BMI. We hope to present some insights
      about the connections that can be made between all the different variables in our dataset. In particular,
      we were interested about the connection between mental health disorders and sleep quality, as well as how
      mental health relates to physical and social health, all of which should be relatable to most students."),
+                         br(),
                          img( src = 'sleepimg.jpg', width = 300, align = "left"), 
                          img( src = 'hat.webp', width = 300, align = "center"),
                          img( src = 'health.jpg', width = 300, align = "right"),
+                         br(),
                          h2("Dataset Information"),
                          p("The individual datasets that we used to create our final joined dataset came from these sources:"),
-                         a(),
-                         a(),
+                         a(href = "https://www.kaggle.com/datasets/sonia22222/students-mental-health-assessments?resource=download", "Student Mental Health Assessments"),
+                         br(),
+                         a(href = "https://www.kaggle.com/datasets/rxnach/student-stress-factors-a-comprehensive-analysis", "Student Stress Factors"),
+                         br(),
+                         a(href = "https://datatools.samhsa.gov/saes/state", "SAMHSA Data"),
+                         br(),
+                         a(href = "https://www.cdc.gov/sleep/data-and-statistics/Adults.html", "CDC Data"),
+                         br(),
                          h2("Data Limitations"),
-                         p("Unfortunately, the data that we used comes with some limitations imposed on it, mainly from <><><>")
+                         p("Unfortunately, the data that we used comes with some limitations imposed on it, mainly due to
+                           the first two datasets having origins that are somewhat obscure. However, this is mitigated by
+                           the use of data from the CDC and SAMHSA, two government organizations that provide general data
+                           about the population.")
 )
 
 
@@ -86,8 +98,12 @@ viz_2_sidebar <- sidebarPanel(
               min = 0,
               max = 5,
               ticks = FALSE,
-              animate = TRUE, # Try this out to see what it does
+              animate = animationOptions(
+                interval = 1500,
+                loop = TRUE,
+              ),  
               step = 1),
+  
   
   selectInput(inputId = "user_selection_viz_2_3", 
               label = "Sleep Stats", 
@@ -99,8 +115,7 @@ viz_2_sidebar <- sidebarPanel(
 viz_2_main_panel <- mainPanel(
   h2("Mental Health and Sleep"),
   plotlyOutput(outputId = "viz_2_output"),
-  h3("Pie Chart"),
-  plotlyOutput(outputId = "viz_2_output_2")
+ 
 )
 
 viz_2_tab <- tabPanel("Mental Health vs. Sleep",
@@ -196,12 +211,12 @@ viz_4_tab <- tabPanel("Mental Health vs. Social Health Factors 2",
 
 ## CONCLUSIONS TAB INFO
 
-conclusion_tab <- tabPanel("Conclusion on The Affects of Mental Health and Sleep",
-                           h1("Some title"),
-                           p("ombining data from the SHAMSHA Substance abuse and mental health services administration and sleep data from the CDC, FitBit, and other sources,
-   we have created an interactiive visualization of how mental health disorders such as anxiety, stress, and sleep quality and duration affect our lives. 
-   Through various visualizaion tabs one can experient with the severity and type of disorder, and observe the reciprocent affects on physical, mental, 
-   and social aspects of our lives.")")
+conclusion_tab <- tabPanel("Concluding Statements",
+     h1("Major Takeaways"),
+     p("ombining data from the SHAMSHA Substance abuse and mental health services administration and sleep data from the CDC, FitBit, and other sources,
+      we have created an interactiive visualization of how mental health disorders such as anxiety, stress, and sleep quality and duration affect our lives. 
+      Through various visualizaion tabs one can experient with the severity and type of disorder, and observe the reciprocent affects on physical, mental, 
+      and social aspects of our lives.") 
 )
 
 
@@ -214,3 +229,8 @@ ui <- navbarPage("INFO 201 Final Project by Isaac Yun, Nicholas Wyatt, and Rowan
                  viz_4_tab,
                  conclusion_tab
 )
+
+
+
+
+
