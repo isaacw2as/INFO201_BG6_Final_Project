@@ -15,7 +15,7 @@ viz_1_sidebar <- sidebarPanel(
 
     selectInput(inputId = "mental_health_factor", 
               label = "Select Mental Health Factor", 
-              choices = c("Stress", "Depression", "Anxiety"),
+              choices = c("Stress", "Depression", "Anxiety", "Sleep"),
               selected = "Stress", 
               multiple = FALSE),
   

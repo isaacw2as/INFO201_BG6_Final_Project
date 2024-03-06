@@ -270,6 +270,9 @@ student_health_data <- student_health_data %>%
            "Extracurricular_Involvement", "School_Load", "Potential_BMI", "Potential_Blood_Pressure",
            "Potential_Heart_Rate", "Potential_Sleep_Duration", "Potential_Sleep_Disorder"))
 
+
+write.csv(student_health_data_pre_comb, "Data Wrangling/student_health_data.csv")
+
 # Potential BMI/Sleep Disorder is a categorical variable
 # Potential Blood_Pressure/Heart_Rate/Sleep_Duration is a numerical variable
 
@@ -291,3 +294,5 @@ current_counter <- student_health_data %>%
   filter(Stress_Level >= 4)
 
 print(nrow(current_counter))
+
+haha <- read.csv("Data Wrangling/student_health_data.csv", check.names = TRUE)
