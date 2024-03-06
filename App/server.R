@@ -142,37 +142,6 @@ server <- function(input, output){
     ggplotly(viz_4_output)
   })
 
-  output$obesity_pie_chart <- renderPlotly({
-    # Assuming 'Obesity' is a binary factor in your dataset with values 'Yes' and 'No'
-    data_obesity <- df %>%
-      count(Potential_BMI) %>%
-      mutate(Percentage = n / sum(n) * 100)
-    
-    plot_ly(data_obesity, labels = ~Obesity, values = ~Percentage, type = 'pie', textinfo = 'label+percent') %>%
-      layout(title = 'Prevalence of Obesity')
-  })
-  
-  output$heart_rate_pie_chart <- renderPlotly({
-    # Assuming you have a categorical variable for heart rate ('Normal', 'Elevated', 'High')
-    data_heart_rate <- df %>%
-      count(Potential_Heart_Rate) %>%
-      mutate(Percentage = n / sum(n) * 100)
-    
-    plot_ly(data_heart_rate, labels = ~Heart_Rate_Category, values = ~Percentage, type = 'pie', textinfo = 'label+percent') %>%
-      layout(title = 'Distribution of Heart Rate Categories')
-  })
-  
-  output$mental_health_pie_chart <- renderPlotly({
-    # Assuming you have a categorical variable for mental health status
-    data_mental_health <- df %>%
-      count(Depression_Score) %>%
-      mutate(Percentage = n / sum(n) * 100)
-    
-    plot_ly(data_mental_health, labels = ~Mental_Health_Status, values = ~Percentage, type = 'pie', textinfo = 'label+percent') %>%
-      layout(title = 'Distribution of Mental Health Status')
-  })
-  
-
  
 }
 
