@@ -4,6 +4,8 @@ library(plotly)
 library(dplyr)
 library(readr) 
 library(stringr)
+library(tidyr)
+ 
 
 
 df <- read.csv("https://raw.githubusercontent.com/isaacw2as/INFO201_BG6_Final_Project/main/Data%20Wrangling/student_health_data.csv")
@@ -51,27 +53,36 @@ server <- function(input, output){
   })
   
   output$viz_2_output <- renderPlotly({
+    user_selection_viz_2_1 <- switch(input$user_selection_viz_2_1,
+           "Stress Level" = "Stress_Level",
+           "Depression" = "Depression_Score",
+           "Anxiety" = "Anxiety_Score")
+    
+    user_selection_viz_2_3 <- switch(input$user_selection_viz_2_3,
+                            "Sleep Duration" = "Sleep_Duration.sleep",
+                            "Sleep Disorder" = "Sleep_Disorder.sleep", 
+                            "Sleep Quality" = "Sleep_Quality")
+    
     filtered_df <- df %>%  
-      filter(.data[[input$user_selection_viz_2_1]]  == input$user_selection_viz_2_2)
-    filtered_df 
+      filter(.data[[user_selection_viz_2_1]] == input$user_selection_viz_2_2)
+ 
+    X <- filtered_df[[user_selection_viz_2_3]]
     
     viz_2_output <- ggplot(data = NULL) + geom_bar(mapping = aes(
-      x =   filtered_df[[input$user_selection_viz_2_3]]      ) )
+      x =  X ,fill = as.factor(X)) ) + 
+      labs(title = "Mental Health & Relation to Sleep Disorders and Sleep Quality",
+           x = paste("Sleep Factor:", input$user_selection_viz_2_3),
+           y = "Count",
+           fill = "Key") +
+      theme_bw()
+  
     
-    return(viz_2_output)   
+     ggplotly(viz_2_output, tooltip = c("x","y")) 
   })
   
   
-  output$viz_2_output <- renderPlotly({
-    filtered_df <- df %>%  
-      filter(.data[[input$user_selection_viz_2_1]]  == input$user_selection_viz_2_2)
-    filtered_df 
-    
-    viz_2_output <- ggplot(data = NULL) + geom_bar(mapping = aes(
-      x =   filtered_df[[input$user_selection_viz_2_3]]      ) )
-    
-    return(viz_2_output)   
-  })
+   
+  
   
   output$viz_3_output <- renderPlotly({
     filtered_df <- df %>%

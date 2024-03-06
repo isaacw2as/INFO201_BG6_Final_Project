@@ -2,9 +2,27 @@ library(plotly)
 
 ## OVERVIEW TAB INFO
 
-overview_tab <- tabPanel("Overview Tab Title",
-   h1("Some title"),
-   p("some explanation")
+overview_tab <- tabPanel("Sleep, Academics, and Health",
+   h1("Introduction"),
+   p("The goal of this project is to seek out relationships between sleep and other factors.
+     Doing this will allow us to determine whether our not there are any connections between the variables
+     at play. For example, is there a correlation between people who report having high depression and those
+     same people getting a low amount of sleep? From our datasets, we were able to gather information about
+     numerous different aspects of a person's life."),
+   p("Among the variables present in the dataset, key ones are
+     sleep quality, sleep disorders, depression score, anxiety score, and BMI. We hope to present some insights
+     about the connections that can be made between all the different variables in our dataset. In particular,
+     we were interested about the connection between mental health disorders and sleep quality, as well as how
+     mental health relates to physical and social health, all of which should be relatable to most students."),
+   img( src = 'sleepimg.jpg', width = 300, align = "left"), 
+   img( src = 'hat.webp', width = 300, align = "center"),
+   img( src = 'health.jpg', width = 300, align = "right"),
+   h2("Dataset Information"),
+   p("The individual datasets that we used to create our final joined dataset came from these sources:"),
+   a(),
+   a(),
+   h2("Data Limitations"),
+   p("Unfortunately, the data that we used comes with some limitations imposed on it, mainly from <><><>")
 )
 
 
@@ -58,8 +76,8 @@ viz_2_sidebar <- sidebarPanel(
   
   selectInput(inputId = "user_selection_viz_2_1", 
               label = "Mental Health Factor", 
-              choices = c("Stress_Level", "Depression_Score", "Anxiety_Score" ),
-              selected = "Stress_Level", 
+              choices = c("Stress Level", "Depression", "Anxiety" ),
+              selected = "Stress Level", 
               multiple = FALSE),
   
   sliderInput(inputId = "user_selection_viz_2_2", 
@@ -68,19 +86,21 @@ viz_2_sidebar <- sidebarPanel(
               min = 0,
               max = 5,
               ticks = FALSE,
-              #animate = TRUE, # Try this out to see what it does
+               animate = TRUE, # Try this out to see what it does
               step = 1),
   
   selectInput(inputId = "user_selection_viz_2_3", 
               label = "Sleep Stats", 
-              choices = c( "Potential_Sleep_Duration", "Potential_Sleep_Disorder", "Sleep_Quality"),
-              selected = "Potential_Sleep_Duration", 
+              choices = c( "Sleep Duration", "Sleep Disorder", "Sleep Quality"),
+              selected = "Sleep Duration", 
               multiple = FALSE)
 )
 
 viz_2_main_panel <- mainPanel(
   h2("Mental Health and Sleep"),
-  plotlyOutput(outputId = "viz_2_output")
+  plotlyOutput(outputId = "viz_2_output"),
+  h3("Pie Chart"),
+  plotlyOutput(outputId = "viz_2_output_2")
 )
 
 viz_2_tab <- tabPanel("Mental Health vs. Sleep",
@@ -183,7 +203,7 @@ conclusion_tab <- tabPanel("Conclusion Tab Title",
 
 
 
-ui <- navbarPage("Example Project Title",
+ui <- navbarPage("INFO 201 Final Project by Isaac Yun, Nicholas Wyatt, and Rowan Cooper",
   overview_tab,
   viz_1_tab,
   viz_2_tab,
