@@ -67,8 +67,6 @@ viz_1_tab <- tabPanel("Mental Health vs. Physical Health",
                       )
 )
 
-
-
 ## VIZ 2 TAB INFO
 
 viz_2_sidebar <- sidebarPanel(
@@ -196,12 +194,12 @@ viz_4_tab <- tabPanel("Mental Health vs. Social Health Factors 2",
 
 ## CONCLUSIONS TAB INFO
 
-conclusion_tab <- tabPanel("Conclusion on The Affects of Mental Health and Sleep",
-                           h1("Some title"),
-                           p("ombining data from the SHAMSHA Substance abuse and mental health services administration and sleep data from the CDC, FitBit, and other sources,
+conclusion_tab <- tabPanel("Conclusion",
+                           h1("Conclusion of Mental Health on Physical, Mental, and Sleep Health:"),
+                           p("Combining data from the SHAMSHA Substance abuse and mental health services administration and sleep data from the CDC, FitBit, and other sources,
    we have created an interactiive visualization of how mental health disorders such as anxiety, stress, and sleep quality and duration affect our lives. 
    Through various visualizaion tabs one can experient with the severity and type of disorder, and observe the reciprocent affects on physical, mental, 
-   and social aspects of our lives.")")
+   and social aspects of our lives.")
 )
 
 
